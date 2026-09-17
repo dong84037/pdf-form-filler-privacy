@@ -5,6 +5,10 @@ const LEGAL_LINKS = [
   { href: "/privacy", label: "개인정보처리방침" },
   { href: "/refund-policy", label: "청약철회/환불 정책" },
   { href: "/business-info", label: "사업자정보" },
+  { href: "/shipping-policy", label: "배송정책" },
+  { href: "/youth-protection", label: "청소년보호정책" },
+  { href: "/email-collection-policy", label: "이메일무단수집거부" },
+  { href: "/cookie-policy", label: "쿠키정책" },
 ];
 
 export function Footer() {
