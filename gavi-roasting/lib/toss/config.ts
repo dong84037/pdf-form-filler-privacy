@@ -4,8 +4,9 @@
 export const TOSS_PAYMENT_MODE: "test" | "live" =
   process.env.NEXT_PUBLIC_TOSS_PAYMENT_MODE === "live" ? "live" : "test";
 
-// 토스페이먼츠 공식 테스트 클라이언트 키 (문서 공개값). 실 연동 시 발급받은 키로 교체.
-const TEST_CLIENT_KEY = "test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq";
+// 토스페이먼츠 결제위젯(주문서형) 공식 문서 공개 테스트 클라이언트 키.
+// 실 연동 시 상점관리자에서 발급받은 키로 교체.
+const TEST_CLIENT_KEY = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
 
 export const TOSS_CLIENT_KEY =
   TOSS_PAYMENT_MODE === "live"
