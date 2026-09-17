@@ -11,13 +11,13 @@ export default function BusinessInfoPage() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <h1 className="text-2xl font-semibold">사업자정보</h1>
+      <h1 className="font-display text-2xl text-paper">사업자정보</h1>
       <table className="mt-8 w-full text-sm">
         <tbody>
           {rows.map(([label, value]) => (
-            <tr key={label} className="border-b">
-              <th className="py-2 pr-4 text-left font-medium text-neutral-500">{label}</th>
-              <td className="py-2">{value}</td>
+            <tr key={label} className="border-b border-white/10">
+              <th className="py-2 pr-4 text-left font-medium text-muted">{label}</th>
+              <td className="py-2 text-paper">{value}</td>
             </tr>
           ))}
         </tbody>

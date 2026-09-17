@@ -9,11 +9,11 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t">
-      <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-neutral-600">
+    <footer className="border-t border-white/10 bg-ink">
+      <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-muted">
         <nav className="flex flex-wrap gap-4">
           {LEGAL_LINKS.map((link) => (
-            <Link key={link.href} href={link.href}>
+            <Link key={link.href} href={link.href} className="hover:text-copper">
               {link.label}
             </Link>
           ))}

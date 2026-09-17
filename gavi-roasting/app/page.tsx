@@ -6,10 +6,10 @@ export default function HomePage() {
     <div className="mx-auto max-w-6xl px-4 py-12">
       <section className="grid gap-8 sm:grid-cols-2 sm:items-center">
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight">
+          <h1 className="font-display text-4xl tracking-tight text-paper">
             로스팅 한 배치, 한 번의 정직한 기록
           </h1>
-          <p className="mt-4 text-neutral-600">
+          <p className="mt-4 text-muted">
             가비 로스팅은 산지와 로스팅 과정을 있는 그대로 전합니다.
           </p>
         </div>
@@ -21,20 +21,20 @@ export default function HomePage() {
       </section>
 
       <section className="mt-16">
-        <h2 className="text-xl font-semibold">대표 원두</h2>
+        <h2 className="font-display text-2xl text-paper">대표 원두</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
           {["ethiopia-yirgacheffe", "colombia-huila", "guatemala-antigua"].map(
             (slug) => (
               <Link
                 key={slug}
                 href={`/products/${slug}`}
-                className="block border p-4"
+                className="block border border-white/10 p-4 hover:border-copper/60"
               >
                 <PlaceholderImage
                   filename={`${slug}.jpg`}
                   className="aspect-square w-full"
                 />
-                <p className="mt-3 text-sm text-neutral-500">준비 중인 원두명</p>
+                <p className="mt-3 text-sm text-muted">준비 중인 원두명</p>
               </Link>
             )
           )}
@@ -44,26 +44,26 @@ export default function HomePage() {
       <section className="mt-16 grid gap-6 sm:grid-cols-2">
         <Link
           href="/products"
-          className="border p-8 text-center hover:bg-neutral-50"
+          className="border border-copper/60 p-8 text-center hover:bg-copper/10"
         >
-          <p className="text-lg font-medium">원두 구매하기</p>
-          <p className="mt-1 text-sm text-neutral-500">소매 고객용 쇼핑</p>
+          <p className="font-display text-lg text-copper">원두 구매하기</p>
+          <p className="mt-1 text-sm text-muted">소매 고객용 쇼핑</p>
         </Link>
         <Link
           href="/wholesale"
-          className="border p-8 text-center hover:bg-neutral-50"
+          className="border border-white/15 p-8 text-center hover:border-copper/60"
         >
-          <p className="text-lg font-medium">도매 문의하기</p>
-          <p className="mt-1 text-sm text-neutral-500">카페·업체용 문의</p>
+          <p className="font-display text-lg text-paper">도매 문의하기</p>
+          <p className="mt-1 text-sm text-muted">카페·업체용 문의</p>
         </Link>
       </section>
 
       <section className="mt-16">
-        <h2 className="text-xl font-semibold">브랜드 스토리</h2>
-        <p className="mt-4 max-w-2xl text-neutral-600">
+        <h2 className="font-display text-2xl text-paper">브랜드 스토리</h2>
+        <p className="mt-4 max-w-2xl text-muted">
           로스팅 철학과 소싱 원칙에 관한 소개 문구가 이 자리에 들어갑니다. (placeholder)
         </p>
-        <Link href="/story" className="mt-4 inline-block underline">
+        <Link href="/story" className="mt-4 inline-block text-copper underline underline-offset-4">
           더 알아보기
         </Link>
       </section>

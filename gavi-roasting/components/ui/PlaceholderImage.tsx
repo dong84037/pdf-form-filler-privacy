@@ -9,7 +9,7 @@ interface PlaceholderImageProps {
 export function PlaceholderImage({ filename, label, className = "" }: PlaceholderImageProps) {
   return (
     <div
-      className={`flex flex-col items-center justify-center gap-1 bg-neutral-200 text-neutral-500 ${className}`}
+      className={`flex flex-col items-center justify-center gap-1 border border-white/10 bg-neutral-700 text-neutral-400 ${className}`}
     >
       <span className="text-xs">{label ?? "이미지 준비 중"}</span>
       <span className="font-mono text-[10px]">{filename}</span>

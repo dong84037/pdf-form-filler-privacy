@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/features/layout/Header";
 import { Footer } from "@/components/features/layout/Footer";
+import { fontDisplay, fontBody } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "Gavi Roasting",
@@ -14,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body className="flex min-h-screen flex-col antialiased">
+    <html lang="ko" className={`${fontDisplay.variable} ${fontBody.variable}`}>
+      <body className="flex min-h-screen flex-col bg-ink font-body text-paper antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
