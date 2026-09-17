@@ -59,7 +59,7 @@ export function ProductOptionSelector({
                 disabled={soldOut}
                 onClick={() => setSelectedId(option.id)}
                 className={`border px-4 py-2 text-sm transition-colors ${
-                  active ? "border-copper text-copper" : "border-white/15 text-paper"
+                  active ? "border-copper text-copper" : "border-ink/15 text-paper"
                 } ${soldOut ? "cursor-not-allowed opacity-40" : "hover:border-copper/60"}`}
               >
                 {option.label}
@@ -72,7 +72,7 @@ export function ProductOptionSelector({
 
       <div className="mt-6 flex items-center gap-3">
         <p className="text-sm font-medium text-paper">수량</p>
-        <div className="flex items-center border border-white/15">
+        <div className="flex items-center border border-ink/15">
           <button
             type="button"
             onClick={() => setQuantity((q) => Math.max(1, q - 1))}

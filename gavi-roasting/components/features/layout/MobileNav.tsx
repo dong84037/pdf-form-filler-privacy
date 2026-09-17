@@ -28,7 +28,7 @@ export function MobileNav() {
       </button>
 
       {open && (
-        <nav className="absolute inset-x-0 top-full border-b border-white/10 bg-ink px-4 py-4">
+        <nav className="absolute inset-x-0 top-full border-b border-ink/10 bg-cream px-4 py-4">
           <ul className="flex flex-col gap-1 text-sm text-paper/80">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>

@@ -22,7 +22,7 @@ const EMPTY_FORM: FormState = {
 };
 
 const FIELD_CLASSES =
-  "mt-1 w-full border border-white/15 bg-transparent px-3 py-2 text-sm text-paper placeholder:text-muted focus:border-copper focus:outline-none";
+  "mt-1 w-full border border-ink/15 bg-transparent px-3 py-2 text-sm text-paper placeholder:text-muted focus:border-copper focus:outline-none";
 
 export function WholesaleInquiryForm() {
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
@@ -81,7 +81,7 @@ export function WholesaleInquiryForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-white/10 p-8 text-center">
+      <div className="border border-ink/10 p-8 text-center">
         <p className="font-display text-xl text-copper">문의가 접수되었습니다</p>
         <p className="mt-2 text-sm text-muted">
           담당자가 확인 후 입력하신 연락처로 안내드리겠습니다.

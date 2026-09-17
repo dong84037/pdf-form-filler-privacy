@@ -9,7 +9,7 @@ export function CartItem({ line }: { line: CartLine }) {
   const removeLine = useCartStore((state) => state.removeLine);
 
   return (
-    <div className="flex gap-4 border-b border-white/10 py-4">
+    <div className="flex gap-4 border-b border-ink/10 py-4">
       <PlaceholderImage
         filename={`${line.productSlug}.jpg`}
         className="h-16 w-16 flex-shrink-0"
@@ -22,7 +22,7 @@ export function CartItem({ line }: { line: CartLine }) {
         </div>
 
         <div className="flex items-center gap-4">
-          <div className="flex items-center border border-white/15">
+          <div className="flex items-center border border-ink/15">
             <button
               type="button"
               onClick={() =>

@@ -5,7 +5,7 @@ import { NAV_LINKS } from "@/components/features/layout/nav-links";
 
 export function Header() {
   return (
-    <header className="relative border-b border-white/10 bg-ink">
+    <header className="relative border-b border-ink/10 bg-cream">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <div className="flex items-center gap-3">
           <MobileNav />

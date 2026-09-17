@@ -17,7 +17,7 @@ export default function BusinessInfoPage() {
       <table className="mt-8 w-full text-sm">
         <tbody>
           {rows.map(([label, value]) => (
-            <tr key={label} className="border-b border-white/10">
+            <tr key={label} className="border-b border-ink/10">
               <th className="py-2 pr-4 text-left font-medium text-muted">{label}</th>
               <td className="py-2 text-paper">{value}</td>
             </tr>

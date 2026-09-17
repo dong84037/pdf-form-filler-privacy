@@ -19,7 +19,7 @@ export default function RootLayout({
       lang="ko"
       className={`${fontDisplay.variable} ${fontBody.variable} ${fontLogo.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-ink font-body text-paper antialiased">
+      <body className="flex min-h-screen flex-col bg-cream font-body text-paper antialiased">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

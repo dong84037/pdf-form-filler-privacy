@@ -13,7 +13,7 @@ const LEGAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink">
+    <footer className="border-t border-ink/10 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-muted">
         <nav className="flex flex-wrap gap-4">
           {LEGAL_LINKS.map((link) => (

@@ -11,7 +11,7 @@ export default function LoginPage() {
           type="email"
           placeholder="you@example.com"
           disabled
-          className="border border-white/15 bg-transparent px-3 py-2 text-sm text-paper placeholder:text-muted"
+          className="border border-ink/15 bg-transparent px-3 py-2 text-sm text-paper placeholder:text-muted"
         />
         <Button disabled>매직링크 전송 (연동 전)</Button>
       </form>

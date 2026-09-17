@@ -11,7 +11,7 @@ interface ShippingFormProps {
 }
 
 const FIELD_CLASSES =
-  "mt-1 w-full border border-white/15 bg-transparent px-3 py-2 text-sm text-paper placeholder:text-muted focus:border-copper focus:outline-none";
+  "mt-1 w-full border border-ink/15 bg-transparent px-3 py-2 text-sm text-paper placeholder:text-muted focus:border-copper focus:outline-none";
 
 export function ShippingForm({ value, onChange }: ShippingFormProps) {
   return (

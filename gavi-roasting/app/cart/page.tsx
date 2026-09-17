@@ -27,7 +27,7 @@ export default function CartPage() {
     <div className="mx-auto max-w-3xl px-4 py-12">
       <h1 className="font-display text-3xl text-paper">장바구니</h1>
 
-      <div className="mt-8 border-t border-white/10">
+      <div className="mt-8 border-t border-ink/10">
         {lines.map((line) => (
           <CartItem key={`${line.productId}-${line.optionId}`} line={line} />
         ))}

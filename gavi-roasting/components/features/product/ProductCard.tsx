@@ -11,12 +11,12 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="block border border-white/10 p-4 hover:border-copper/60"
+      className="block border border-ink/10 p-4 hover:border-copper/60"
     >
       <div className="relative">
         <PlaceholderImage filename={`${product.slug}.jpg`} className="aspect-square w-full" />
         {soldOut && (
-          <span className="absolute right-2 top-2 border border-white/20 bg-ink/80 px-2 py-1 text-xs text-muted">
+          <span className="absolute right-2 top-2 border border-ink/15 bg-cream/90 px-2 py-1 text-xs text-ink">
             품절
           </span>
         )}

@@ -41,7 +41,7 @@ export default async function HomePage() {
         </Link>
         <Link
           href="/wholesale"
-          className="border border-white/15 p-8 text-center hover:border-copper/60"
+          className="border border-ink/15 p-8 text-center hover:border-copper/60"
         >
           <p className="font-display text-lg text-paper">도매 문의하기</p>
           <p className="mt-1 text-sm text-muted">카페·업체용 문의</p>

@@ -26,7 +26,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           <div className="mt-3 flex flex-wrap gap-2">
             <RoastLevelBadge level={product.roastLevel} />
             {product.flavorNotes.map((note) => (
-              <span key={note} className="border border-white/15 px-2 py-0.5 text-xs text-muted">
+              <span key={note} className="border border-ink/15 px-2 py-0.5 text-xs text-muted">
                 {note}
               </span>
             ))}
@@ -41,7 +41,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
         </div>
       </div>
 
-      <div className="mt-12 border-t border-white/10 pt-8">
+      <div className="mt-12 border-t border-ink/10 pt-8">
         <h2 className="font-display text-xl text-paper">상세 설명</h2>
         <p className="mt-4 max-w-2xl text-muted">{product.description}</p>
       </div>

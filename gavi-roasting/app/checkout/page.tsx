@@ -76,7 +76,7 @@ export default function CheckoutPage() {
 
       <section className="mt-8">
         <h2 className="font-display text-lg text-paper">주문 상품</h2>
-        <div className="mt-4 divide-y divide-white/10 border-y border-white/10">
+        <div className="mt-4 divide-y divide-ink/10 border-y border-ink/10">
           {lines.map((line) => (
             <div
               key={`${line.productId}-${line.optionId}`}

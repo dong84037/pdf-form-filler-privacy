@@ -11,12 +11,13 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // 브랜드 디렉션 3: 블랙 + 카퍼 포인트
-        ink: "#121212", // 기본 배경
-        surface: "#1C1C1C", // 카드/구획 배경
+        // 블랙 + 카퍼 포인트 방향에서, 배경을 무드보드 1안의 크림으로 교체
+        cream: "#F5EDE1", // 기본 배경
+        surface: "#EFE6D8", // 카드/구획 배경 (크림보다 한 톤 짙게)
         copper: "#C2703D", // 포인트 컬러
-        paper: "#F5F5F5", // 밝은 배경 위 텍스트 / 라이트 섹션 배경
-        muted: "#8A8A8A", // 보조 텍스트
+        ink: "#2B1B12", // 기본 텍스트 / 카퍼 버튼 위 텍스트
+        paper: "#2B1B12", // 본문 텍스트 (크림 배경 위이므로 짙은 색)
+        muted: "#7A6A56", // 보조 텍스트 (크림 배경 대비 4.5:1 확보)
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
