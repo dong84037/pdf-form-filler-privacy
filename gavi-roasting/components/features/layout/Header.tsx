@@ -9,7 +9,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <div className="flex items-center gap-3">
           <MobileNav />
-          <Link href="/" className="font-display text-xl tracking-tight text-copper">
+          <Link href="/" className="font-logo whitespace-nowrap text-xl text-copper sm:text-3xl">
             Gavi Roasting
           </Link>
         </div>
