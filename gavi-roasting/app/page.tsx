@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
+import { getProducts } from "@/lib/products";
+import { ProductGrid } from "@/components/features/product/ProductGrid";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const featuredProducts = (await getProducts()).slice(0, 3);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <section className="grid gap-8 sm:grid-cols-2 sm:items-center">
@@ -22,22 +26,8 @@ export default function HomePage() {
 
       <section className="mt-16">
         <h2 className="font-display text-2xl text-paper">대표 원두</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-3">
-          {["ethiopia-yirgacheffe", "colombia-huila", "guatemala-antigua"].map(
-            (slug) => (
-              <Link
-                key={slug}
-                href={`/products/${slug}`}
-                className="block border border-white/10 p-4 hover:border-copper/60"
-              >
-                <PlaceholderImage
-                  filename={`${slug}.jpg`}
-                  className="aspect-square w-full"
-                />
-                <p className="mt-3 text-sm text-muted">준비 중인 원두명</p>
-              </Link>
-            )
-          )}
+        <div className="mt-6">
+          <ProductGrid products={featuredProducts} />
         </div>
       </section>
 

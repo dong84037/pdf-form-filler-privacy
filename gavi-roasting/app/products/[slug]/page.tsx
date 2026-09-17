@@ -1,28 +1,44 @@
+import { notFound } from "next/navigation";
+import { getProductBySlug, getProducts } from "@/lib/products";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
-import { Button } from "@/components/ui/Button";
+import { RoastLevelBadge } from "@/components/features/product/RoastLevelBadge";
+import { ProductOptionSelector } from "@/components/features/product/ProductOptionSelector";
 
-// Phase 3에서 Supabase products 테이블 조회 + 장바구니 담기 로직으로 교체됩니다.
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+export async function generateStaticParams() {
+  const products = await getProducts();
+  return products.map((product) => ({ slug: product.slug }));
+}
+
+export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const product = await getProductBySlug(params.slug);
+  if (!product) {
+    notFound();
+  }
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
       <div className="grid gap-8 sm:grid-cols-2">
-        <PlaceholderImage filename={`${params.slug}.jpg`} className="aspect-square w-full" />
+        <PlaceholderImage filename={`${product.slug}.jpg`} className="aspect-square w-full" />
         <div>
-          <h1 className="font-display text-3xl text-paper">
-            준비 중인 원두명 ({params.slug})
-          </h1>
-          <p className="mt-2 text-muted">원산지 · 로스팅 정도 · 맛 프로파일 (placeholder)</p>
-          <p className="mt-6 text-xl font-medium text-copper">가격 준비 중</p>
+          <h1 className="font-display text-3xl text-paper">{product.name}</h1>
+          <p className="mt-2 text-muted">{product.origin}</p>
 
-          <div className="mt-6">
-            <p className="text-sm font-medium text-paper">용량 선택</p>
-            <p className="mt-2 text-sm text-muted">옵션 UI는 Phase 3에서 연동됩니다.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <RoastLevelBadge level={product.roastLevel} />
+            {product.flavorNotes.map((note) => (
+              <span key={note} className="border border-white/15 px-2 py-0.5 text-xs text-muted">
+                {note}
+              </span>
+            ))}
           </div>
 
-          <Button disabled className="mt-8 w-full">
-            장바구니 담기 (연동 전)
-          </Button>
+          <ProductOptionSelector options={product.options} />
         </div>
+      </div>
+
+      <div className="mt-12 border-t border-white/10 pt-8">
+        <h2 className="font-display text-xl text-paper">상세 설명</h2>
+        <p className="mt-4 max-w-2xl text-muted">{product.description}</p>
       </div>
     </div>
   );
