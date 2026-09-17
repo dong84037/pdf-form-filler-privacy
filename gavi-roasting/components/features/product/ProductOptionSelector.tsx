@@ -4,14 +4,43 @@ import { useState } from "react";
 import { ProductOption } from "@/types/product";
 import { Button } from "@/components/ui/Button";
 import { formatPriceKRW, isOutOfStock } from "@/lib/utils";
+import { useCartStore } from "@/lib/cart-store";
 
-export function ProductOptionSelector({ options }: { options: ProductOption[] }) {
+interface ProductOptionSelectorProps {
+  productId: string;
+  productSlug: string;
+  productName: string;
+  options: ProductOption[];
+}
+
+export function ProductOptionSelector({
+  productId,
+  productSlug,
+  productName,
+  options,
+}: ProductOptionSelectorProps) {
   const firstAvailable = options.find((option) => !isOutOfStock(option.stock)) ?? options[0];
   const [selectedId, setSelectedId] = useState(firstAvailable.id);
   const [quantity, setQuantity] = useState(1);
+  const [justAdded, setJustAdded] = useState(false);
+  const addLine = useCartStore((state) => state.addLine);
 
   const selected = options.find((option) => option.id === selectedId) ?? firstAvailable;
   const selectedSoldOut = isOutOfStock(selected.stock);
+
+  function handleAddToCart() {
+    addLine({
+      productId,
+      productSlug,
+      productName,
+      optionId: selected.id,
+      optionLabel: selected.label,
+      unitPrice: selected.price,
+      quantity,
+    });
+    setJustAdded(true);
+    setTimeout(() => setJustAdded(false), 1500);
+  }
 
   return (
     <div className="mt-6">
@@ -64,8 +93,8 @@ export function ProductOptionSelector({ options }: { options: ProductOption[] })
         </div>
       </div>
 
-      <Button disabled={selectedSoldOut} className="mt-8 w-full">
-        {selectedSoldOut ? "품절" : "장바구니 담기 (연동 전)"}
+      <Button disabled={selectedSoldOut} onClick={handleAddToCart} className="mt-8 w-full">
+        {selectedSoldOut ? "품절" : justAdded ? "장바구니에 담았습니다" : "장바구니 담기"}
       </Button>
     </div>
   );

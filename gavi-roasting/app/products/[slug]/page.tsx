@@ -32,7 +32,12 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
             ))}
           </div>
 
-          <ProductOptionSelector options={product.options} />
+          <ProductOptionSelector
+            productId={product.id}
+            productSlug={product.slug}
+            productName={product.name}
+            options={product.options}
+          />
         </div>
       </div>
 
